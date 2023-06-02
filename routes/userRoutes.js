@@ -4,13 +4,13 @@ const {
 	registerController,
 	authController,
 	applyDoctorController,
-	getAllNotificationsController,
-	deleteAllNotificationsController,
-	getAllDoctorsController,
-	bookAppointmentController,
+	getAllNotificationController,
+	deleteAllNotificationController,
+	getAllDocotrsController,
+	bookeAppointmnetController,
 	bookingAvailabilityController,
 	userAppointmentsController,
-} = require("../controllers/userControllers");
+} = require("../controllers/userCtrl");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 //router onject
@@ -31,22 +31,22 @@ router.post("/apply-doctor", authMiddleware, applyDoctorController);
 
 //Notifiaction  Doctor || POST
 router.post(
-	"/get-all-notifications",
+	"/get-all-notification",
 	authMiddleware,
-	getAllNotificationsController
+	getAllNotificationController
 );
 //Notifiaction  Doctor || POST
 router.post(
-	"/delete-all-notifications",
+	"/delete-all-notification",
 	authMiddleware,
-	deleteAllNotificationsController
+	deleteAllNotificationController
 );
 
 //GET ALL DOC
-router.get("/getAllDoctors", authMiddleware, getAllDoctorsController);
+router.get("/getAllDoctors", authMiddleware, getAllDocotrsController);
 
 //BOOK APPOINTMENT
-router.post("/book-appointment", authMiddleware, bookAppointmentController);
+router.post("/book-appointment", authMiddleware, bookeAppointmnetController);
 
 //Booking Avliability
 router.post(
